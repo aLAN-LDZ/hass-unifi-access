@@ -421,7 +421,7 @@ class UnifiAccessHub:
 
     def get_switches(self):
         # Implement the logic to retrieve switches from your API
-        pass
+        return []
 
     async def turn_on_switch(self, switch_id: str) -> None:
         # Implement the logic to turn on a switch

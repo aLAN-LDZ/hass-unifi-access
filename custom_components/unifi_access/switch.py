@@ -14,6 +14,8 @@ async def async_setup_entry(
     """Set up the Unifi Access switches."""
     hub: UnifiAccessHub = hass.data[DOMAIN][entry.entry_id]
     switches = hub.get_switches()  # Assumes your hub has a method to get switches
+    if switches is None:
+        switches = []
     async_add_entities([UnifiAccessSwitch(hub, switch) for switch in switches], True)
 
 class UnifiAccessSwitch(SwitchEntity):
