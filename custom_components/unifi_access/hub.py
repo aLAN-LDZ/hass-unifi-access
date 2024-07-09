@@ -419,6 +419,18 @@ class UnifiAccessHub:
             sslopt = {"cert_reqs": ssl.CERT_NONE}
         ws.run_forever(sslopt=sslopt, reconnect=5)
 
+    def get_switches(self):
+        # Implement the logic to retrieve switches from your API
+        pass
+
+    async def turn_on_switch(self, switch_id: str) -> None:
+        # Implement the logic to turn on a switch
+        pass
+
+    async def turn_off_switch(self, switch_id: str) -> None:
+        # Implement the logic to turn off a switch
+        pass      
+
     def start_continuous_updates(self):
         """Start listening for updates in a separate thread using websocket-client."""
         self.update_t = Thread(target=self.listen_for_updates)
